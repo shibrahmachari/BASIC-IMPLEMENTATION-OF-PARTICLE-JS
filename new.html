@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BRIM</title>
+<link rel="shortcut icon" href="./views/brim.png" sizes="64x64" />
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css">
+
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Playfair+Display">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style type="text/css">
+  .bg-img{
+
+  position:relative ;
+  background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height:158px;
+    width:1600px;
+    top:60px;
+  }
+
+  #container {
+    height: 500px;
+    min-width: 310px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 700px;
+}
+
+.ammapDescriptionWindow {
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: Verdana;
+  font-size: 10px;
+  opacity: 0.95;
+  overflow: auto;
+}
+
+
+
+
+
+
+/* Optional: Makes the sample page fill the window. */
+
+ .heading{
+   font-size:40px;
+ }
+.btn{
+  background-color: #1A237E;
+  color:white; }
+
+  .snip1361 {
+    font-family: 'Quattrocento', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    height: 230px;
+
+    color:#141414;
+    text-align: left;
+    line-height: 1.8em;
+    font-size: px;
+  }
+  .snip1361 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+  .snip1361 img {
+    max-width: 100%;
+    vertical-align: top;
+    height:240px;
+    width:500px;
+  }
+  .snip1361 figcaption {
+    position: absolute;
+    top: calc(68%);
+    width: 100%;
+
+    background-color: #283593;
+      opacity: 0.9; filter: alpha(opacity=70);
+    padding: 15px 25px 65px;
+  }
+  .snip1361 figcaption:before {
+    position:absolute;
+    content: ''
+    z-index: 2;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-image: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
+
+    background-image: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+  }
+  .snip1361 h5,
+  .snip1361 p {
+    margin: 0 0 10px;
+  }
+  .snip1361 h5 {
+
+    font-weight:
+    font-size: 1px;
+    line-height: 1.2em;;
+    font-family: 'Noto Serif', serif;
+
+    color:white;
+  }
+  .snip1361 p {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    color:white;
+  }
+
+  .snip1361:hover figcaption,
+  .snip1361.hover figcaption {
+    top: 80px;
+  }
+.icon{
+  color:#4CAF50;
+}
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/indiaLow.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+</head>
+<body >
+<nav class="navbar navbar-expand-sm navbar-light sticky-top" style=" background-color: white;position:fixed;top:0;width:100%;height:85px;">
+<p><img src="C:\Users\Shikhab\Desktop\brim.png" style="width:290px;height:100px; position:relative;top:18px;left:20px;"></p>
+<!--<p class="text-dark" style="position:relative; right:150px; top:10px;font-size:10px;"><strong>Know Your Water</strong></p>-->
+<button type="button" class="btn " style="background-color: #1A237E; font-family: 'Open Sans', sans-serif;position:relative;left:700px;bottom:10px;height:29px;"><p class="text-light" style="position:relative; bottom:5px;">Login</p></button>
+
+<button type="button" class="btn " style="background-color: #1A237E; font-family: 'Open Sans', sans-serif;position:relative;left:720px;bottom:10px;height:29px;"><p class="text-light" style="position:relative; bottom:5px;">Sign- Up</p></button>
+</nav>
+
+     <nav class="navbar navbar-expand-lg navbar-light   sticky-top " style=" background-color:;height:50px; left:395px;position:fixed;top:30px;opacity: 0.7; filter: alpha(opacity=70);width:100%;">
+
+
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="/aboutus" style="color:black;padding-left:40px;font-size:18px;"><strong>Home</strong><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/aboutus" style="color:black;padding-left:40px;font-size:18px;"><strong>About Us</strong><span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="#contactus" style="color:black;padding-left:40px;font-size:18px;"><strong>Contact Us</strong></a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+
+<div id="particles-js" style=" background:linear-gradient(to bottom,#1A237E,#536DFE);height:700px;position: relative;bottom:-100px;"></div>
+ <div style="position:relative;bottom:310px;right:70px; text-align:right;">
+  <br>
+<!--<button type="button" class="btn" style=" background-color:#B71C1C ; font-family: 'Open Sans', sans-serif;border-radius: 30px;height:50px;width:290px;position: relative;top:10px;box-shadow:6px 6px 5px black;"><strong class="text-light" ><h3>Get a Quote</h3></strong><span style="position: relative; bottom: 35px;font-size:20px; left:100px;color:#FFC300  ;"><i class="fas fa-angle-right"></i></span></button>-->
+</div>
+
+<div style="position:relative; text-align:center;bottom:600px;">
+<p class=" text-light" style="position:relative; right:20px;font-family: 'Playfair Display', serif; font-size:88px;"><strong> <button type="button" class="btn " style="background-color:#B71C1C; font-family: 'Open Sans', sans-serif;border-radius: 30px;height:50px;width:290px;box-shadow:6px 6px 5px black;"><strong class="text-light"><h3>Donate Waste</h3></strong><span style="position: relative; bottom: 35px;font-size:20px; left:120px;color:#FFC300  ;"><i class="fas fa-angle-right"></i></span></button>
+</strong></p>
+<p class=" text-light" style="position:relative; right:20px;font-family: 'Playfair Display', serif; font-size:88px;"><strong> <button type="button" class="btn " style="background-color:#B71C1C; font-family: 'Open Sans', sans-serif;border-radius: 30px;height:50px;width:290px;box-shadow:6px 6px 5px black;"><strong class="text-light"><h3>Take away Waste</h3></strong><span style="position: relative; bottom: 35px;font-size:20px; left:120px;color:#FFC300  ;"><i class="fas fa-angle-right"></i></span></button>
+</strong></p>
+<p class=" text-light" style="position:relative; right:20px;font-family: 'Playfair Display', serif; font-size:88px;"><strong> <button type="button" class="btn " style="background-color:#B71C1C; font-family: 'Open Sans', sans-serif;border-radius: 30px;height:50px;width:290px;box-shadow:6px 6px 5px black;"><strong class="text-light"><h3>Lodge a complaint</h3></strong><span style="position: relative; bottom: 35px;font-size:20px; left:120px;color:#FFC300  ;"><i class="fas fa-angle-right"></i></span></button>
+</strong></p>
+</div>
+<div style="color:#E8EAF6;position:relative; bottom:280px; text-align:center;">
+</div>
+<script>
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+
+<!-- scripts -->
+<script src="particles.js"></script>
+<script src="app.js"></script>
+
+
+<!-- stats.js -->
+<script >
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+
+<script>
+  AOS.init();
+</script>
+
+
+
+    <script type="text/javascript">
+    $(function() {
+    $('.slide').slick({
+      slidesToShow: 3,
+         slidesToScroll: 1,
+         autoplay: true,
+         autoplaySpeed: 500,
+      });
+
+    });
+
+    </script>
+<button class="open-button" onclick="openForm()">Open Form</button>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+    <script>
+  var descriptiondelhi="<h3>Delhi</h3> <br>we have total 200 sensors installed. <br>the quality of water is not safe for consumption at all.";
+  var descriptiongoa="<h3>GOA</h3> <br>we have total 100 sensors installed. <br>the quality of water is average for consumption at all.Water on the beaches have high Alkalinitylevels ";
+  var descriptionup="<h3>UP</h3> <br>we have total 90 sensors installed. <br>the quality of water is not fit for consumption at all.";
+  var descriptionbr="<h3>Bihar</h3> <br>we have total 95sensors installed. <br>the quality of water is very poor and not at all fit for consumption. <br>Specially the water samples of lake are not fit for aquatic life";
+  var descriptionkl="<h3>Kerala</h3> <br>we have total 10 sensors installed. <br>the quality of water is not fit for consumption at all.";
+  var descriptioniit="<h3>IIT</h3> <br>we have total 10 sensors installed. <br>the quality of water is not fit for consumption at all.";
+  var descriptionnsit="<h3>NSIT</h3> <br>we have total 10 sensors installed. <br>the quality of water is not fit for consumption at all.";
+  var descriptiondtu="<h3>DTU</h3> <br>we have total 10 sensors installed. <br>the quality of water is not fit for consumption at all.";
+
+
+
+    var map= AmCharts.makeChart("chartdiv",{
+      type: "map",
+     "theme": "light",
+     "projection": "miller",
+
+     "dataProvider": {
+       "map": "indiaLow",
+       "getAreasFromMap":false,
+       "areas":[
+         {"id":"IN-GA",
+       "value":100,
+       "color":"#D50000",
+       "description": descriptiongoa
+
+     },
+       {"id":"IN-UP",
+     "value":90,
+   "color":"#F57C00",
+   "description": descriptionup,
+  },
+     {"id":"IN-BR",
+   "value":190,
+  "color":"#B2FF59",
+  "description": descriptionbr,
+  },
+   {"id":"IN-DL",
+  "value":120,
+  "description": descriptiondelhi,
+  "color":"#EEFF41"},
+  {"id":"IN-GJ",
+  "value":200,
+  "color":"#E74C3C"},
+  {"id":"IN-KL",
+  "value":170,
+  "color":"#FFEB3B",
+  "description": descriptionkl,
+  },
+  {"id":"IN-CT",
+  "value":270,
+  "color":"#FFD180"},
+  {"id":"IN-RJ",
+  "value":290,
+  "color":"#827717"},
+  {"id":"IN-JK",
+  "value":390,
+  "color":"#FFEE58"},
+  {"id":"IN-HR",
+  "value":390,
+  "color":"#A93226"},
+  {"id":"IN-TG",
+  "value":490,
+  "color":"#00C853"},
+  {"id":"IN-OR",
+  "value":790,
+  "color":"#009688"},
+  ],
+  "images":[
+    {latitude: 28.650789, longitude:77.232040, balloonText: "Fitso Delhi",
+   type: "circle", scale: 0.5 },
+    {latitude:28.612911, longitude:77.229507, balloonText: "IIT Delhi", "description": descriptioniit,
+  type: "circle", scale: 0.5},
+    {latitude:28.6102, longitude:77.0379, balloonText: "NSIT","description": descriptionnsit,
+   type: "circle", scale: 0.5 },
+    {latitude:28.7501, longitude:77.1177, balloonText: "DTU","description": descriptiondtu,
+   type: "circle", scale: 0.5},
+    {latitude:23.0063, longitude:72.6026, balloonText: "Kankaria Lake", type: "circle", scale: 0.5},
+    {latitude:21.1886, longitude: 72.8298, balloonText: "Gopi Talav", type: "circle", scale: 0.5},
+    {latitude:26.4872, longitude:74.5540, balloonText: "Pushkar Lake", type: "circle", scale: 0.5},
+    {latitude:26.4874, longitude:74.5488, balloonText: "Brahma Template", type: "circle", scale: 0.5},
+    {latitude:25.0173, longitude:77.1177, balloonText: "Rajgir", type: "circle", scale: 0.5},
+    {latitude:24.7914, longitude:85.0002, balloonText: "gaaya", type: "circle", scale: 0.5},
+
+
+  ],
+  },
+
+  "areasSettings": {
+      "autoZoom": true,
+  "rollOverColor":"#F4FF81",
+    "outlineColor":"#16CC56",
+    "outlineThickness":2,
+    "unlistedAreasColor":"#5DADE2",
+    "descriptionWindowY": 20,
+        "descriptionWindowX": 850,
+      "descriptionWindowWidth": 280,
+      "descriptionWindowHeight": 330
+
+
+    },
+
+    "imagesSettings": {
+     "labelPosition": "middle",
+     "labelFontSize": 8,
+     "labelRollOverColor": "#000",
+     "descriptionWindowY": 20,
+         "descriptionWindowX": 850,
+       "descriptionWindowWidth": 280,
+       "descriptionWindowHeight": 330
+
+   }
+    });
+    </script>
+    <!-- -->
+
+<!--<script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: 20.593390, lng: 78.961611}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCD';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat:28.543680, lng:77.198692},
+        {lat: 28.632429, lng: 77.218788},
+        {lat:22.244198, lng: 68.968452},
+        {lat: 28.680050, lng:77.343292}
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsHYxXJuW3_mrmOKOqE8H5wuGdkuaA7kQ&callback=initMap">
+    </script>
+    <script>
+    function openCity(evt, cityName) {
+// Declare all variables
+var i, tabcontent, tablinks;
+
+// Get all elements with class="tabcontent" and hide them
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+
+// Get all elements with class="tablinks" and remove the class "active"
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+
+// Show the current tab, and add an "active" class to the link that opened the tab
+document.getElementById(cityName).style.display = "block";
+evt.currentTarget.className += " active";
+}
+</script>-->
+<script type="text/javascript">
+var data = [
+    ['in-py', 0],
+    ['in-ld', 1],
+    ['in-wb', 2],
+    ['in-or', 3],
+    ['in-br', 4],
+    ['in-sk', 5],
+    ['in-ct', 6],
+    ['in-tn', 7],
+    ['in-mp', 8],
+    ['in-2984', 9],
+    ['in-ga', 10],
+    ['in-nl', 11],
+    ['in-mn', 12],
+    ['in-ar', 13],
+    ['in-mz', 14],
+    ['in-tr', 15],
+    ['in-3464', 16],
+    ['in-dl', 17],
+    ['in-hr', 18],
+    ['in-ch', 19],
+    ['in-hp', 20],
+    ['in-jk', 21],
+    ['in-kl', 22],
+    ['in-ka', 23],
+    ['in-dn', 24],
+    ['in-mh', 25],
+    ['in-as', 26],
+    ['in-ap', 27],
+    ['in-ml', 28],
+    ['in-pb', 29],
+    ['in-rj', 30],
+    ['in-up', 31],
+    ['in-ut', 32],
+    ['in-jh', 33]
+
+];
+
+// Create the chart
+Highcharts.mapChart('container', {
+    chart: {
+        map: 'countries/in/in-all'
+    },
+
+    title: {
+        text: 'Water point'
+    },
+
+    subtitle: {
+        text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/in/in-all.js">India</a>'
+    },
+
+    mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+
+    colorAxis: {
+        min: 0
+    },
+
+    series: [{
+        data: data,
+
+
+
+        name: 'water point',
+        states: {
+            hover: {
+                color: '#BADA55'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html >
+<html>
+<head>
+<title>Probus</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<style type="text/css">
+.bg-img{
+  background-image: url(http://www.engineeringchallenges.org/File.aspx?id=16268);
+  position:relative ;
+  left: 450px;
+  height:158px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" media="screen" href="style.css">
+
+</head>
+<body>
+  <div id="particles-js"></div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-img fixed-top-2" style="position:relative; top:100px;">
+    <a class="navbar-brand" href="#" style="position:relative; right:450px;"><img src="C:\Users\Shikhab\Desktop\Logo1.png"alt="logo" style="position:relative;bottom:10px;left:60px;width:250px; height:90px;"></a>
+
+      </nav>
+      <p class="text-info" style="position:relative;bottom:88px;left:150px;">know your water</p>
+      <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top " style=" background-color:#0009;height:50px; position:absolute; top:500px;opacity: 0.7; filter: alpha(opacity=70);">
+        <a class="navbar-brand text-light" href="#" style="padding-left:40px;">Home</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link text-light" href="/aboutus" style="padding-left:40px;"><strong>About-us</strong><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/aboutus" style="padding-left:40px;"><strong>Product and services</strong></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#"data-toggle="modal" data-target="#exampleModal" style="padding-left:40px;"><strong>Login</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#contactus" style="padding-left:40px;"><strong>Contact Us</strong></a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+  <!-- scripts -->
+  <script type="text/javascript" src="particles.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+  <!-- stats.js -->
+  <script src="js/lib/stats.js"></script>
+  <script>
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function() {
+      stats.begin();
+      stats.end();
+      if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+      }
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  </script>

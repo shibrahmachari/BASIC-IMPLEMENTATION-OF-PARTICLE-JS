@@ -37,3 +37,7 @@ Untracked files:
 
 nothing added to commit but untracked files present
 hoi
+[master (root-commit) a3fd583] first1
+ 1 file changed, 39 insertions(+)
+ create mode 100644 README.md
+# newhack
